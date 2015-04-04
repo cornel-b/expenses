@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @eentry.user_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @eentry.amount %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @eentry.tags %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @eentry.details %>
+</p>
+
+<%= link_to 'Edit', edit_eentry_path(@eentry) %> |
+<%= link_to 'Back', eentries_path %>
+<script>window.location.replace('http://localhost:3000/eentries');</script>

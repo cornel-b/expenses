@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Eentries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Amount</th>
+      <th>Tags</th>
+      <th>Details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eentries.each do |eentry| %>
+      <tr>
+        <td><%= eentry.user_id %></td>
+        <td><%= eentry.amount %></td>
+        <td><%= eentry.tags %></td>
+        <td><%= eentry.details %></td>
+        <td><%= link_to 'Show', eentry %></td>
+        <td><%= link_to 'Edit', edit_eentry_path(eentry) %></td>
+        <td><%= link_to 'Destroy', eentry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Eentry', new_eentry_path %>

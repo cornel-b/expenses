@@ -1,0 +1,1 @@
+#MongoMapper.database = "expensedb-#{Rails.env}"
