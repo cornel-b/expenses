@@ -26,8 +26,6 @@ class EentriesController < ApplicationController
   # GET /eentries/1/weekview
   def weekview
 
-    # first_day = Date.today.beginning_of_week
-    # first_day = Date.today.beginning_of_month
     @first_day = (DateTime.now - 1.month).beginning_of_month
     @week_tags = []
     for i in 0..7
@@ -95,12 +93,10 @@ class EentriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_eentry
       @eentry = Eentry.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def eentry_params
       params.require(:eentry).permit(:user_id, :amount, :tags, :details)
     end
