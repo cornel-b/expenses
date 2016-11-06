@@ -6,7 +6,7 @@ class EentriesController < ApplicationController
   # GET /eentries
   # GET /eentries.json
   def index
-    @eentries = Eentry.all.order_by(:created.asc)
+    @eentries = Eentry.all.order_by(:created.desc)
   end
 
   # GET /eentries/1
@@ -50,7 +50,7 @@ class EentriesController < ApplicationController
 
     respond_to do |format|
       if @eentry.save
-        format.html { redirect_to @eentry, notice: 'The entry was successfully created.' }
+        format.html { redirect_to @eentry, notice: 'The entry was successfully created' }
         format.json { render :show, status: :created, location: @eentry }
       else
         format.html { render :new }
@@ -73,7 +73,7 @@ class EentriesController < ApplicationController
       @eentry.updated = Time.now.strftime("%Y-%m-%d %H:%M:%S")
 
       if @eentry.save
-        format.html { redirect_to @eentry, notice: 'The entry was successfully updated.' }
+        format.html { redirect_to @eentry, notice: 'The entry was successfully updated' }
         format.json { render :show, status: :ok, location: @eentry }
       else
         format.html { render :edit }
@@ -87,7 +87,7 @@ class EentriesController < ApplicationController
   def destroy
     @eentry.destroy
     respond_to do |format|
-      format.html { redirect_to eentries_url, notice: 'The entry was successfully destroyed.' }
+      format.html { redirect_to eentries_url, notice: 'The entry was successfully deleted' }
       format.json { head :no_content }
     end
   end

@@ -30,7 +30,6 @@ class GraphController < ApplicationController
         tags.each do |tag|
           if @find_tags.include? tag
             @current_line[tag] += entry.amount.to_f
-
           end
         end
 
