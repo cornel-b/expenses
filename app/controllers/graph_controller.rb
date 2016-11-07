@@ -12,7 +12,6 @@ class GraphController < ApplicationController
     @output = "date,household,food,drinks,transport"
 
     for week_no in 0..4
-
       @week_tags = []
       for i in 0..7
         @week_tags << (@current_day + (week_no * 7) + i).strftime('%Y-%m-%d')
